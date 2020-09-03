@@ -1,0 +1,16 @@
+{
+  "name": "movie-browser",
+  "version": "1.1.0",
+  "description": "HRSF77/78 Review: Movie Browser",
+  "author": "Hack Reactor <curriculum.team@hackreactor.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "lodash": "^4.6.1",
+    "react": "^16.8.6",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {}
+}
