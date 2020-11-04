@@ -1,16 +1,41 @@
 {
-  "name": "movie-browser",
+  "name": "pokemon-gacha",
   "version": "1.1.0",
-  "description": "HRSF77/78 Review: Movie Browser",
-  "author": "Hack Reactor <curriculum.team@hackreactor.com>",
+  "description": "HRSF130: Mvp",
+  "author": "Katie Poa",
   "license": "UNLICENSED",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack -d -w"
+  },
   "dependencies": {
-    "jquery": "^2.2.1",
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "lodash": "^4.6.1",
+    "nodemon": "^2.0.6",
     "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^5.2.1",
     "underscore": "^1.8.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.18.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katpoa/mvp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/katpoa/mvp/issues"
+  },
+  "homepage": "https://github.com/katpoa/mvp#readme"
 }
