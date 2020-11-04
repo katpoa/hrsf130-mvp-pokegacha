@@ -157,7 +157,7 @@ class App extends React.Component {
 
   pokedex(image, name) {
     const { box } = this.state;
-    box.push({name: image});
+    box.push({name: name, image: image});
     // just have duplicates for now bc no easy delete from array
     this.setState({
       box: box

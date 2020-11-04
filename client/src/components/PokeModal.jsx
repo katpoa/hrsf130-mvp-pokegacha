@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PokeEntry from './PokeEntry.jsx';
 
 const Page = styled.div`
   padding: 40px;
@@ -124,13 +125,6 @@ const List = styled.div`
   overflow-y: scroll;
 `;
 
-const Img = styled.img`
-  object-fit: contain;
-  max-width: 64px;
-  max-height: 64px;
-  border-radius: 4px;
-`;
-
 const PokeModal = ({ box, pokedex, handleClose }) => (
   <Page>
     <Modal>
@@ -148,21 +142,19 @@ const PokeModal = ({ box, pokedex, handleClose }) => (
       <div>
         <List>
           {box.map(pokemon => (
+            <PokeEntry
+              name={pokemon.name}
+              image={pokemon.image}
+            />
+          ))}
             <div>
-              <Button onClick={pokedex}>
+              {/* <Button onClick={pokedex}>
                 <Close viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false">
                   <path d="m6 6 20 20" />
                   <path d="m26 6-20 20" />
                 </Close>
-              </Button>
-              <div>
-                <div>
-                  {pokemon.name}
-                </div>
-                <Img src={pokemon.image} />
-              </div>
+              </Button> */}
             </div>
-          ))}
         </List>
       </div>
     </Modal>
