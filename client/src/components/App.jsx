@@ -8,28 +8,51 @@ import PokeModal from './PokeModal.jsx';
 const Body = styled.div`
   font-family: 'Inconsolata', monospace;
   font-family: 'Montserrat', sans-serif;
-  margin: 100px;
+  margin: 50px;
+  // width: 100vw;
+  // height: 100vh;
+  position: relative;
+  background-image: url('https://miscellaneous-projects.s3-us-west-1.amazonaws.com/wallpaper.jpg');
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: contain;
 `;
 
 const Header = styled.div`
+  text-align: center;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  opacity: .9;
+`;
+
+const Headers = styled.h2`
+  padding: 15px;
+  text-align: center;
   justify-content: center;
+  margin: 20px;
+  border-radius: 15px;
+  border: 2px solid white;
+  background: white;
+  opacity: .9;
+  max-width: 400px;
+  max-height: 80px;
 `;
 
 const Logo = styled.img`
-  margin-left: 10%;
-  width: 150px;
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 200px;
 `;
 
 const Starter = styled.div`
   display: block;
-  margin: auto;
-  size: 300px;
+  margin-left: 50px;
+  margin-right: 50px;
+  size: 200px;
   border-radius: 50px;
-  border: 3px dotted #f7d848;
-  // background-image: url('https://miscellaneous-projects.s3-us-west-1.amazonaws.com/pokeball.jpg');
-  // opacity: 0.6;
+  border: 5px dotted #f7d848;
 `;
 
 const Currency = styled.div`
@@ -37,6 +60,8 @@ const Currency = styled.div`
   justify-content: center;
   margin: auto;
   margin-top: 20px;
+  background: white;
+  opacity: .95;
   width: 100px;
   border-radius: 15px;
   border: 2px dotted #f7d848;
@@ -45,7 +70,7 @@ const Currency = styled.div`
 
 const Img = styled.img`
   width: 300px;
-  display: block;
+  display: flex;
   margin: auto;
 `;
 
@@ -195,7 +220,7 @@ class App extends React.Component {
       <Body>
         {modalPop}
         <Header>
-        <h2>Gotta catch 'em all!</h2>
+          <Headers>Gotta catch 'em all!</Headers>
           <Logo src="https://miscellaneous-projects.s3-us-west-1.amazonaws.com/logo.png" />
           <Form getStarter={this.getStarter} pokedex={this.pokedex} />
         </Header>
@@ -210,7 +235,7 @@ class App extends React.Component {
             </Button>
           </Pokedex>
           <div>
-            <h2>Unlimited Availability Banners</h2>
+            <Headers>Unlimited Availability Banners</Headers>
             {list}
           </div>
         </div>

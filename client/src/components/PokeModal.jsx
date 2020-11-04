@@ -31,7 +31,6 @@ const Page = styled.div`
 const Modal = styled.div`
   z-index: 200;
   width: 100%;
-  overflow-y: scroll;
   max-width: 568px;
   border-radius: 12px;
   background: rgb(255, 255, 255);

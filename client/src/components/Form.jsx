@@ -6,6 +6,10 @@ const Box = styled.div`
   display: flex;
   flex-direction: row;
   margin: auto;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid white;
+  background: white;
 `;
 
 const Input = styled.input`

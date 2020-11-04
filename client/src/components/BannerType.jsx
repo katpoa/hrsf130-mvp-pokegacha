@@ -10,7 +10,8 @@ const Item = styled.div`
 `;
 
 const Type = styled.div`
-  margin: 20px;
+  font-size: 20px;
+  margin: auto;
 `;
 
 const Box = styled.div`
@@ -18,14 +19,24 @@ const Box = styled.div`
   flex-direction: row;
   border-radius: 50px;
   border: 3px dotted #f7d848;
-  height: 300px;
+  height: 400px;
   justify-content: space-between;
+  background-color: white;
+  margin: 30px;
+  max-width: 500px;
+`;
+
+const FlexColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-right: 20px;
 `;
 
 const Button = styled.button`
   display: block;
   margin: 50px;
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 10px;
   // background: linear-gradient(#7D1827 5%, red 49%, black 5%, white 49%, #CADBD1);
   // background: linear-gradient(#DB250C 50%, #FCFBF3 49%);
@@ -33,6 +44,7 @@ const Button = styled.button`
   background-image: linear-gradient(319deg, #cdedfd 0%, #ffec82 37%, #ffcfd2 100%);
   // background: linear-gradient(115deg,#a8f1ba,#f3e4a6,#c09ae7,#95dbf7,#8be9b0);
   height: 50px;
+  width: 100px;
 `;
 
 const Pokemon = styled.div`
@@ -51,8 +63,8 @@ const Save = styled.button`
   outline: none;
   border: none;
   border-radius: 100%;
-  margin-right: 16px;
-  margin-top: 17px;
+  margin-right: 26px;
+  margin-top: 50px;
   :hover {
     border: 1px solid grey;
   }
@@ -173,18 +185,22 @@ class BannerType extends React.Component {
     return (
       <Item>
         <Box>
-          <Type>{type}</Type>
-          <Button onClick={this.reRoll}>
-            <strong>Try your luck!</strong><br/>(-5 essence)
-          </Button>
-          <Pokemon>
-            <Save type="button" onClick={this.heartClick}>
-              <Icon src="https://miscellaneous-projects.s3-us-west-1.amazonaws.com/poke.png" />
-              {/* {heart} */}
-            </Save>
-            <Img src={image} />
-            <h3>{name}</h3>
-          </Pokemon>
+          <FlexColumn>
+            <Type>{type}</Type>
+            <Button onClick={this.reRoll}>
+              <strong>Try your luck!</strong><br/>(-5 essence)
+            </Button>
+          </FlexColumn>
+          <FlexColumn>
+            <Pokemon>
+              <Save type="button" onClick={this.heartClick}>
+                <Icon src="https://miscellaneous-projects.s3-us-west-1.amazonaws.com/poke.png" />
+                {/* {heart} */}
+              </Save>
+              <Img src={image} />
+              <h3>{name}</h3>
+            </Pokemon>
+          </FlexColumn>
         </Box>
       </Item>
     );
