@@ -14,7 +14,8 @@ const Page = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(34, 34, 34, .6);
-
+  overflow: hidden;
+  white-space: nowrap;
   animation-duration: 1s;
   animation-name: x;
   @keyframes x {
@@ -62,6 +63,8 @@ const Header = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0px;
   border-bottom: 1px solid rgb(235, 235, 235);
 `;
 
@@ -69,21 +72,19 @@ const Button = styled.button`
   appearance: none;
   justify-content: left;
 
-  position: absolute;
-  display: flex;
+  position: sticky;
   top: 16px;
-  left: 24px;
+  margin-left: 24px;
 
   border-radius: 50%;
   border: none;
   outline: none;
-  margin: 0px;
-  padding: 0px;
+  top: 0px;
+  padding: 7px;
   color: rgb(34, 34, 34);
   cursor: pointer;
   touch-action: manipulation;
-  // position: relative;
-  background: transparent;
+  opacity: .7;
   transition: -ms-transform 0.25s ease 0s, -webkit-transform 0.25s ease 0s, transform 0.25s ease 0s;
 }
 `;
@@ -112,17 +113,19 @@ const Title = styled.header`
 `;
 
 const HeaderTitle = styled.div`
+  font-weight: bold;
   -webkit-box-flex: 0;
   // overflow: hidden;
   flex: 0 1 auto;
   text-align: center;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin: auto;
 `;
 
 const List = styled.div`
+  margin-top: 50px;
   padding: 20px 16px;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 `;
 
 const PokeModal = ({ box, pokedex, handleClose }) => (

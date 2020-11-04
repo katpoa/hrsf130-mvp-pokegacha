@@ -6,8 +6,9 @@ import Form from './Form.jsx';
 import PokeModal from './PokeModal.jsx';
 
 const Body = styled.div`
-font-family: 'Inconsolata', monospace;
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Inconsolata', monospace;
+  font-family: 'Montserrat', sans-serif;
+  margin: 100px;
 `;
 
 const Header = styled.div`
@@ -24,8 +25,9 @@ const Logo = styled.img`
 const Starter = styled.div`
   display: block;
   margin: auto;
-  size: 350px;
-  border: 1px solid grey;
+  size: 300px;
+  border-radius: 50px;
+  border: 3px dotted #f7d848;
   // background-image: url('https://miscellaneous-projects.s3-us-west-1.amazonaws.com/pokeball.jpg');
   // opacity: 0.6;
 `;
@@ -34,6 +36,7 @@ const Currency = styled.div`
   display: block;
   justify-content: center;
   margin: auto;
+  margin-top: 20px;
   width: 100px;
   border-radius: 15px;
   border: 2px dotted #f7d848;
@@ -53,7 +56,7 @@ const Pokedex = styled.div`
 const Button = styled.button`
   border-radius: 12px;
   height: 25px;
-  background: beige;
+  background: #FFEFAC;
   margin: 20px;
 `;
 

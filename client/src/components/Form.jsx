@@ -8,9 +8,13 @@ const Box = styled.div`
   margin: auto;
 `;
 
+const Input = styled.input`
+  margin: 10px;
+`;
+
 const Button = styled.button`
   border-radius: 12px;
-  height: 20px;
+  height: 25px;
   background: white;
 `;
 
@@ -49,7 +53,7 @@ class Form extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Choose your starter Pokémon:
-            <input
+            <Input
               value={this.state.value}
               onChange={this.handleChange}
             />

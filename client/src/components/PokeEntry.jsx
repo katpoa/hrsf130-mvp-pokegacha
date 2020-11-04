@@ -8,9 +8,10 @@ const Row = styled.div`
 
 const Img = styled.img`
   object-fit: contain;
-  max-width: 64px;
-  max-height: 64px;
+  max-width: 150px;
+  max-height: 150px;
   border-radius: 4px;
+  white-space: nowrap;
 `;
 
 const PokeEntry = ({name, image}) => {

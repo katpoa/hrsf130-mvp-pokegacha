@@ -6,19 +6,33 @@ const randomize = (max, min) => min + Math.floor(Math.random() * (max - min));
 
 const Item = styled.div`
   margin: auto;
+  width: 60vw;
+`;
+
+const Type = styled.div`
   margin: 20px;
 `;
+
 const Box = styled.div`
   display: flex;
   flex-direction: row;
-  border: 1px solid grey;
+  border-radius: 50px;
+  border: 3px dotted #f7d848;
+  height: 300px;
+  justify-content: space-between;
 `;
 
 const Button = styled.button`
-  border-radius: 10px;
-  background: linear-gradient(115deg,#a8f1ba,#f3e4a6,#c09ae7,#95dbf7,#8be9b0);
-  height: 50px;
+  display: block;
   margin: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+  // background: linear-gradient(#7D1827 5%, red 49%, black 5%, white 49%, #CADBD1);
+  // background: linear-gradient(#DB250C 50%, #FCFBF3 49%);
+  background-color: #cdedfd;
+  background-image: linear-gradient(319deg, #cdedfd 0%, #ffec82 37%, #ffcfd2 100%);
+  // background: linear-gradient(115deg,#a8f1ba,#f3e4a6,#c09ae7,#95dbf7,#8be9b0);
+  height: 50px;
 `;
 
 const Pokemon = styled.div`
@@ -30,11 +44,25 @@ const Pokemon = styled.div`
 const Img = styled.img`
   display: block;
   margin: auto;
-  width: 200px;
+  max-width: 200px;
 `;
 
-const Save = styled.div`
+const Save = styled.button`
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  margin-right: 16px;
+  margin-top: 17px;
+  :hover {
+    border: 1px solid grey;
+  }
+`;
 
+const Icon = styled.img`
+  object-fit: contain;
+  max-width: 24px;
+  max-height: 24px;
+  border-radius: 4px;
 `;
 
 const EmptyHeart = styled.button`
@@ -77,7 +105,7 @@ const FilledHeart = styled.button`
   border: none;
 `;
 
-class Type extends React.Component {
+class BannerType extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -145,16 +173,17 @@ class Type extends React.Component {
     return (
       <Item>
         <Box>
-          <h3>{type}</h3>
+          <Type>{type}</Type>
           <Button onClick={this.reRoll}>
             <strong>Try your luck!</strong><br/>(-5 essence)
           </Button>
           <Pokemon>
+            <Save type="button" onClick={this.heartClick}>
+              <Icon src="https://miscellaneous-projects.s3-us-west-1.amazonaws.com/poke.png" />
+              {/* {heart} */}
+            </Save>
             <Img src={image} />
             <h3>{name}</h3>
-            <Save>
-              {heart}
-            </Save>
           </Pokemon>
         </Box>
       </Item>
@@ -162,4 +191,4 @@ class Type extends React.Component {
   }
 }
 
-export default Type;
+export default BannerType;
