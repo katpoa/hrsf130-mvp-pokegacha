@@ -2,6 +2,17 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
+const Box = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+`;
+
+const Button = styled.button`
+  border-radius: 12px;
+  height: 20px;
+  background: white;
+`;
 
 class Form extends React.Component {
   constructor(props) {
@@ -25,12 +36,13 @@ class Form extends React.Component {
     const { value } = this.state;
     const { getStarter } = this.props;
     getStarter(value.toLowerCase());
+    alert('Click on your starer Pokémon to train/gain essence!')
   }
 
   render() {
     // const { image } = this.props;
     return (
-      <div>
+      <Box>
         <form onSubmit={this.handleSubmit}>
           <label>
             Choose your starter Pokémon:
@@ -38,13 +50,12 @@ class Form extends React.Component {
               value={this.state.value}
               onChange={this.handleChange}
             />
-            <button onClick={this.handleSubmit}>I choose you!</button>
+            <Button onClick={this.handleSubmit}>I choose you!</Button>
           </label>
         </form>
-      </div>
+      </Box>
     );
   }
-
 }
 
 export default Form;

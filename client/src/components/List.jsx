@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Banner from './Banner.jsx';
+import Type from './Type.jsx';
 
-const Banners = styled.div`
-  border: 1px dotted linear-gradient(115deg,#a8f1ba,#f3e4a6,#c09ae7,#95dbf7,#8be9b0);
+const Banners = styled.ul`
+  display: flex;
+  flex-direction: column;
 `;
 
-const List = ({types, images}) => (
+const List = ({types, currency, spendEssence}) => (
   <Banners>
-    { types.forEach((type, index) => (
-      <Banner key={type.id} name={type.name} list={type.pokemon} image={images[index]} />
+    { types.map((type, index) => (
+      <Type key={index} type={type.name} list={type.pokemon} currency={currency} spendEssence={spendEssence} />
     ))}
   </Banners>
 );

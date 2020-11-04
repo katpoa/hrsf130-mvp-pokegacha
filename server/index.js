@@ -5,7 +5,8 @@ const path = require('path');
 const axios = require('axios');
 const bodyParser = require('body-parser');
 
-app.use('/', bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/', bodyParser.json({limit: '50mb'}));
 
 // queries by pokemon type: Normal, Fire, Water, Grass, Flying, Fighting, Poison, Electric, Ground, Rock, Psychic, Ice, Bug, Ghost, Steel, Dragon, Dark and Fairy
 // types endpoint : GET
