@@ -7,10 +7,10 @@ const Banners = styled.ul`
   flex-direction: column;
 `;
 
-const List = ({types, currency, spendEssence}) => (
+const List = ({types, currency, spendEssence, pokedex}) => (
   <Banners>
     { types.map((type, index) => (
-      <Type key={index} type={type.name} list={type.pokemon} currency={currency} spendEssence={spendEssence} />
+      <Type key={index} type={type.name} list={type.pokemon} currency={currency} spendEssence={spendEssence} pokedex={pokedex} />
     ))}
   </Banners>
 );

@@ -34,13 +34,16 @@ class Form extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { value } = this.state;
-    const { getStarter } = this.props;
-    getStarter(value.toLowerCase());
-    alert('Click on your starer Pokémon to train/gain essence!')
+    const { getStarter, pokedex } = this.props;
+    const name = value.toLowerCase();
+    getStarter(name);
+    axios.get(`/api/pokemon/name/${name}`)
+      .then(list => pokedex(list.data.sprites.other['official-artwork'].front_default, name))
+      .catch(err => console.log(err));
+    alert('Click on your starter Pokémon to train/gain essence!')
   }
 
   render() {
-    // const { image } = this.props;
     return (
       <Box>
         <form onSubmit={this.handleSubmit}>
