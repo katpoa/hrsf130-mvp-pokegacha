@@ -22,7 +22,8 @@ const Box = styled.div`
   height: 400px;
   justify-content: space-between;
   background-color: white;
-  margin: 30px;
+  margin: auto;
+  margin-bottom: 40px;
   max-width: 500px;
 `;
 
@@ -43,8 +44,8 @@ const Button = styled.button`
   background-color: #cdedfd;
   background-image: linear-gradient(319deg, #cdedfd 0%, #ffec82 37%, #ffcfd2 100%);
   // background: linear-gradient(115deg,#a8f1ba,#f3e4a6,#c09ae7,#95dbf7,#8be9b0);
-  height: 50px;
-  width: 100px;
+  height: 70px;
+  width: 120px;
 `;
 
 const Pokemon = styled.div`
@@ -56,7 +57,7 @@ const Pokemon = styled.div`
 const Img = styled.img`
   display: block;
   margin: auto;
-  max-width: 200px;
+  width: 200px;
 `;
 
 const Save = styled.button`
@@ -72,8 +73,8 @@ const Save = styled.button`
 
 const Icon = styled.img`
   object-fit: contain;
-  max-width: 24px;
-  max-height: 24px;
+  max-width: 30px;
+  max-height: 30px;
   border-radius: 4px;
 `;
 

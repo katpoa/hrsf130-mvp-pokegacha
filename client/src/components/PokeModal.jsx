@@ -12,9 +12,9 @@ const Page = styled.div`
   bottom: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   background: rgba(34, 34, 34, .6);
-  overflow: hidden;
+  overflow-y: scroll;
   white-space: nowrap;
   animation-duration: 1s;
   animation-name: x;
@@ -35,7 +35,7 @@ const Modal = styled.div`
   border-radius: 12px;
   background: rgb(255, 255, 255);
   position: relative;
-  max-height: 100%;
+  overflow-y: scroll;
   display: flex;
   margin: auto;
   flex-direction: column;
@@ -60,6 +60,7 @@ const Modal = styled.div`
 const Header = styled.div`
   display: flex;
   flex-direction: row;
+  background-color: white;
   align-items: center;
   justify-content: center;
   position: sticky;
@@ -121,10 +122,10 @@ const HeaderTitle = styled.div`
 `;
 
 const List = styled.div`
-  margin-top: 50px;
+  margin-top: 20px;
   padding: 20px 16px;
-  overflow-y: hidden;
-  white-space: nowrap;
+  overflow-y: scroll;
+  white-space: wrap;
 `;
 
 const PokeModal = ({ box, pokedex, handleClose }) => (

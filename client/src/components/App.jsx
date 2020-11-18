@@ -8,9 +8,7 @@ import PokeModal from './PokeModal.jsx';
 const Body = styled.div`
   font-family: 'Inconsolata', monospace;
   font-family: 'Montserrat', sans-serif;
-  margin: 50px;
-  // width: 100vw;
-  // height: 100vh;
+  margin: 20px;
   position: relative;
   background-image: url('https://miscellaneous-projects.s3-us-west-1.amazonaws.com/wallpaper.jpg');
   background-repeat: repeat-y;
@@ -24,25 +22,26 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   opacity: .9;
+  margin-left: 30px;
 `;
 
 const Headers = styled.h2`
   padding: 15px;
   text-align: center;
   justify-content: center;
-  margin: 20px;
+  margin-left: 10%;
   border-radius: 15px;
   border: 2px solid white;
   background: white;
   opacity: .9;
   max-width: 400px;
-  max-height: 80px;
+  max-height: 600px;
 `;
 
 const Logo = styled.img`
   display: flex;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
   width: 200px;
 `;
 
@@ -60,6 +59,7 @@ const Currency = styled.div`
   justify-content: center;
   margin: auto;
   margin-top: 20px;
+  padding: 5px;
   background: white;
   opacity: .95;
   width: 100px;
@@ -69,20 +69,28 @@ const Currency = styled.div`
 `;
 
 const Img = styled.img`
-  width: 300px;
+  width: 400px;
   display: flex;
   margin: auto;
 `;
 
-const Pokedex = styled.div`
-
+const Main = styled.div`
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  border: 3px dotted #f7d848;
+  max-width: 400px;
+  justify-content: space-between;
+  background-color: white;
 `;
 
 const Button = styled.button`
   border-radius: 12px;
-  height: 25px;
+  height: 35px;
   background: #FFEFAC;
-  margin: 20px;
+  margin-left: 10%;
 `;
 
 class App extends React.Component {
@@ -227,13 +235,15 @@ class App extends React.Component {
         <div>
           <Starter>
             <Currency>{currency} essence</Currency>
-            {chosen}
+            <Main>
+              {chosen}
+            </Main>
           </Starter>
-          <Pokedex>
+          <div>
             <Button onClick={this.pokeModal}>
               See Pokedex ->
             </Button>
-          </Pokedex>
+          </div>
           <div>
             <Headers>Unlimited Availability Banners</Headers>
             {list}
