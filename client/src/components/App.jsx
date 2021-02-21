@@ -132,6 +132,7 @@ class App extends React.Component {
     this.spendEssence = this.spendEssence.bind(this);
     this.pokedex = this.pokedex.bind(this);
     this.pokeModal = this.pokeModal.bind(this);
+    this.editName = this.editName.bind(this);
   }
 
   componentDidMount() {
@@ -208,6 +209,18 @@ class App extends React.Component {
     });
   }
 
+  editName(oldName, newName) {
+    const { box } = this.state;
+    for (let i in box) {
+      if (box[i].name === oldName) {
+        box[i].name = newName;
+      }
+    }
+    this.setState({
+      box: box
+    })
+  }
+
   render() {
     const { starter, types, currency, box, modal } = this.state;
     const chosen = starter
@@ -222,6 +235,7 @@ class App extends React.Component {
           box={box}
           pokedex={this.pokedex}
           handleClose={this.pokeModal}
+          editName={this.editName}
         />)
       : <div />;
     return (

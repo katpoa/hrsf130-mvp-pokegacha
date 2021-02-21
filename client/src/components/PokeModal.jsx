@@ -128,7 +128,7 @@ const List = styled.div`
   white-space: wrap;
 `;
 
-const PokeModal = ({ box, pokedex, handleClose }) => (
+const PokeModal = ({ box, pokedex, handleClose, editName }) => (
   <Page>
     <Modal>
       <Header>
@@ -148,6 +148,7 @@ const PokeModal = ({ box, pokedex, handleClose }) => (
             <PokeEntry
               name={pokemon.name}
               image={pokemon.image}
+              editName={editName}
             />
           ))}
             <div>
